@@ -9,13 +9,13 @@ int main()
 	if ((pipe(fd1) == -1) || (pipe(fd2) == -1))
 	{
 		std::cout << "Failed to open pipes between parent and child processes" << std::endl;
-		exit(-1);
+		exit(1);
 	}
 	pid_t child;
 	if ((child = fork()) == -1)
 	{
 		std::cout << "Failed to create child process" << std::endl;
-		exit(-1);
+		exit(1);
 	}
 	else if (child > 0)
 	{
@@ -53,7 +53,7 @@ int main()
 		if (!fin.is_open())
 		{
 			std::cout << "Failed to open file to read strings" << std::endl;
-			exit(-1);
+			exit(1);
 		}
 		std::cout << std::endl << "------------------------------------------------" << std::endl << "These strings end in character '.' or ';' :" << std::endl;
 		if (fin.peek() != EOF)
@@ -86,7 +86,7 @@ int main()
 		if (!fout.is_open())
 		{
 			std::cout << "Failed to create or open file to write strings" << std::endl;
-			exit(-1);
+			exit(1);
 		}
 		int counter;
 		read(fd1[0], &counter, sizeof(int));
