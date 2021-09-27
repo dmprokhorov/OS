@@ -98,16 +98,15 @@ void* quicksort (void* arguments)
     return NULL;
 }
 
-int main(/*int argc, char* argv[]*/)
+int main(int argc, char* argv[])
 {
-    /*if ((argc != 3) || (atoi(argv[1]) < 1) || (atoi(argv[2]) < 1))
+    if ((argc != 3) || (atoi(argv[1]) < 1) || (atoi(argv[2]) < 1))
     {
-        std::cout << "Syntax should be like this: ./[executable_file_name] [(positive) number_of_threads] [(positive) size_of_array]" << std::endl;
+        printf("Syntax should be like this: ./[executable_file_name] [(positive integer) number_of_threads] [(positive integer) size_of_array]\n");
         exit(1);
     }
-    int size = atoi(argv[2]), number = atoi(argv[1]);*/
-    unsigned size;
-    scanf("%d %d", &number, &size);
+    number = strtol(argv[1], NULL, 10);
+    unsigned size = strtol(argv[2], NULL, 10);
     if (number > size)
     {
         printf("The size of array is less than number of threads, but it can't be with parallel quick sort, so number of threads equals size of array now\n");
@@ -144,6 +143,7 @@ int main(/*int argc, char* argv[]*/)
         printf("%i ", array[i]);
     }
     printf("\n");
+    free(array);
     free(threads);
     return 0;
 }
