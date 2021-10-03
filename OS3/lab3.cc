@@ -104,9 +104,9 @@ void* quicksort (void* arguments)
 
 int main(int argc, char* argv[])
 {
-    if ((argc != 3) || (atoi(argv[1]) < 1) || (atoi(argv[2]) < 1))
+    if ((argc != 3) || (atoi(argv[1]) < 0) || (atoi(argv[2]) < 1))
     {
-        printf("Syntax should be like this: ./[executable_file_name] [(positive) number_of_threads] [(positive) size_of_array]\n");
+        printf("Syntax should be like this: ./[executable_file_name] [(non-negative) number_of_threads] [(positive) size_of_array]\n");
         exit(1);
     }
     number = strtol(argv[1], NULL, 10);
