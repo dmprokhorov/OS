@@ -34,7 +34,7 @@ void* quicksort (void* arguments)
                 data->array[j] = data->array[i] - data->array[j];
                 data->array[i] -= data->array[j];
             }
-	    if (i == UINT_MAX)
+	    if (i == INT_MAX)
 	    {
                 break;
 	    }
