@@ -1,10 +1,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-extern void swap(int* a, int* b);
-extern int PrimeCount(int A, int B);
-extern int GCF(int A, int B);
-
 void swap (int *a, int *b)
 {
         *a += *b;
