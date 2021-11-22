@@ -83,7 +83,7 @@ int main()
 			result = PrimeCount(A, B);
 			if (result == -1)
 			{
-				printf("At least A or B must be non-negtive whole numbers\n");
+				printf("At least A or B must be non-negative whole numbers\n");
 			}
 			else
 			{
